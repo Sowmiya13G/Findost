@@ -7,7 +7,6 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-  StatusBar,
 } from 'react-native';
 
 import {onboardingData} from '../../constants/onBoardingData/onBoardingData';
@@ -24,12 +23,13 @@ export default function OnboardingScreen() {
     if (currentPage < onboardingData.length - 1 && flatListRef.current) {
       setCurrentPage(currentPage + 1);
       flatListRef.current.scrollToIndex({index: currentPage + 1});
+    } else {
+      navigation.navigate('LoginScreen');
     }
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="#FFD7B4" barStyle="dark-content" />
       <Background />
       {currentPage < onboardingData.length && (
         <TouchableOpacity onPress={handleNextSlide} style={styles.skipView}>

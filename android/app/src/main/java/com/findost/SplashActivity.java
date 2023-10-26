@@ -21,7 +21,7 @@ public class SplashActivity extends ReactActivity {
 
                 finish();
             }
-        }, 3000); 
+        }, 1000); 
     }
 
     @Override
