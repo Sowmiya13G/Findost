@@ -12,7 +12,8 @@ import {
 
 import {onboardingData} from '../../constants/onBoardingData/onBoardingData';
 import {styles} from './styles';
-import {Background} from '../../components/Background';
+import {Background} from '../../components/Background/Background';
+import CustomButton from '../../components/CustonButton/CustomButton';
 
 export default function OnboardingScreen() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -73,9 +74,11 @@ export default function OnboardingScreen() {
           </View>
         )}
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={handleNextSlide}>
-            <Text style={styles.buttonText}>Continue</Text>
-          </TouchableOpacity>
+          <CustomButton
+            logInButton
+            label="CONTINUE"
+            handlePress={handleNextSlide}
+          />
         </View>
       </View>
     </SafeAreaView>
